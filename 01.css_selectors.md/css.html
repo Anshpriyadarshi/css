@@ -34,9 +34,11 @@
 
         .container {
             border: 10px solid green;
-            height: 100px;
+            height: 120px;
             background-image: url("https://www.salzburgerland.com/en/wp-content/uploads/2016/10/salzburger-saalachtal-sommer10-1200x1200.jpg");
             background-repeat: repeat-x;
+            background-origin: content-box;
+            background-clip:content-box;
         }
     </style>
 
@@ -60,7 +62,7 @@
     <div class="container">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae suscipit, assumenda vitae sunt eum est, odit
             officia, fugit impedit perferendis voluptate sapiente veniam consectetur recusandae amet quas nesciunt rem
-            distinctio reiciendis. Voluptatem corporis blanditiis consequuntur .</p>
+            distinctio reiciendis. Voluptatem corporis blanditiis consequuntur <span style="font-family: 'Times New Roman', Times, serif; color: rgb(15, 1, 169);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore corrupti quia numquam beatae aut nemo repellendus vel illum ut quis! Laudantium id officia quidem in soluta incidunt, reiciendis blanditiis totam quisquam labore! Totam qui odit maxime necessitatibus esse tempora dicta assumenda, vero deserunt voluptatibus ab quod debitis doloremque earum ratione!</span> .</p>
     </div><br>
     <button class="btn">button</button>
 </body>
