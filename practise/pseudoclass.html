@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li:last-child {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: yellow;
+        }
+        ul li {
+            list-style-type: none;
+            color: red;
+        }
+        ul li:hover::before{
+            content:"*";
+            color: red;
+        }
+        .container{
+            height: 200px;
+            width: 300px;
+            border: 2px solid red;
+        }
+        .container::first-line{
+            column-rule-color: blue;
+            font-size: 20px;
+        }
+        .container{
+            background:url(waves.png)center/cover;
+            position: relative;
+        }
+        .container::after{
+            content:"";
+            background-color:rgba(19, 9, 9, 0.3);
+            position: absolute;
+            inset: 0;
+        }
+        .container::after:hover{
+            background-color: rgba(122, 148, 10, 0);
+        }
+        .para::first-letter{
+            font-size: 37px;
+            color:red;
+            font-family: cursive;
+        }
+        .para::selection{
+            background-color:purple;
+            color: rgb(248, 247, 247);
+        }
+        [title$=" "]{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>fourth</li>
+        <li>fifth</li>
+        <li>sixth</li>
+        <li>seventh</li>
+    </ul>
+    <div style="color: white;" class="container">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sed qui nostrum aspernatur reiciendis totam ipsam dolorum vero aperiam culpa, voluptas assumenda reprehenderit tempora placeat eos, repudiandae quos doloribus, eius doloremque provident nam distinctio. Ipsam, facilis! Earum odit eaque nam.</p>
+    </div><br>
+    <a href="www"title="links">link with href</a>
+    <a href="abc.com"title="link with title=">link with title</a>
+    <a href="http"title="with href link and extra values">link with href2</a>
+
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias libero quasi quas reiciendis nihil, nulla eos. Qui suscipit a eos laboriosam, nisi natus vel exercitationem, aperiam labore illo, perferendis repellendus.</p>
+</body>
+</html>

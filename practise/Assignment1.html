@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Must See Places</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #18aaa6;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .page {
+            width: 94%;
+            max-width: 1200px;
+            min-height: 620px;
+            background: #f6e9e5;
+            padding: 22px 38px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #3d365d;
+        }
+
+        .nav-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 8px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: #8d7d7a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #655b5d;
+            font-size: 8px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+
+
+        .hero {
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .hero-text {
+            width: 31%;
+            padding-top: 30px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(45px, 5vw, 68px);
+            line-height: 0.9;
+            color: #44385f;
+            letter-spacing: -3px;
+            margin-bottom: 22px;
+        }
+
+        .hero-text p {
+            color: #827678;
+            font-size: 11px;
+            line-height: 1.6;
+            max-width: 280px;
+            margin-bottom: 18px;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #f34e61;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 11px 30px;
+            border-radius: 25px;
+            box-shadow: 0 7px 15px rgba(243, 78, 97, 0.25);
+            transition: 0.3s;
+        }
+
+        .explore-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(243, 78, 97, 0.35);
+        }
+
+
+
+        .destinations {
+            width: 69%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .card {
+            width: 32%;
+            height: 315px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+            transition: 0.4s ease;
+        }
+
+        .card:nth-child(1) {
+            transform: translateY(12px);
+        }
+
+        .card:nth-child(2) {
+            transform: translateY(-2px);
+        }
+
+        .card:nth-child(3) {
+            transform: translateY(8px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(20, 15, 20, 0.7),
+                    rgba(20, 15, 20, 0.05) 60%);
+        }
+
+        .card-info {
+            position: absolute;
+            bottom: 18px;
+            left: 16px;
+            z-index: 2;
+            color: white;
+        }
+
+        .card-info h2 {
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .location {
+            font-size: 8px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+
+
+        .bottom-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: absolute;
+            left: 38px;
+            right: 38px;
+            bottom: 22px;
+        }
+
+        .bottom-title {
+            font-size: 8px;
+            color: #74676a;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .counter {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #756a6c;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .arrows {
+            display: flex;
+            gap: 10px;
+            margin-left: 25px;
+        }
+
+        .arrow {
+            width: 38px;
+            height: 38px;
+            border: 1px solid #d9cdca;
+            border-radius: 50%;
+            background: transparent;
+            color: #857779;
+            cursor: pointer;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .arrow:hover {
+            background: #44385f;
+            color: white;
+        }
+
+        .social {
+            position: absolute;
+            left: 38px;
+            bottom: 23px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .social span {
+            color: #8d8182;
+            font-size: 11px;
+        }
+
+
+
+        @media (max-width: 900px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .page {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+                padding-top: 50px;
+            }
+
+            .hero-text {
+                width: 100%;
+            }
+
+            .destinations {
+                width: 100%;
+            }
+
+            .card {
+                height: 300px;
+            }
+
+            .bottom-section {
+                display: none;
+            }
+
+            .social {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nav-title {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .destinations {
+                flex-direction: column;
+            }
+
+            .card {
+                width: 90%;
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+
+
+        <nav class="navbar">
+
+            <div class="logo">
+                travel.
+            </div>
+
+            <div class="nav-title">
+                CARD SLIDER FOR WORDPRESS
+            </div>
+
+            <div class="nav-links">
+                <a href="#">ABOUT</a>
+                <a href="#">CONTACT</a>
+            </div>
+
+        </nav>
+
+
+
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <h1>
+                    Must see<br>
+                    Places
+                </h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Proin elementum metus eu enim rhoncus posuere.
+                </p>
+
+                <a href="#" class="explore-btn">
+                    Explore
+                </a>
+
+            </div>
+
+
+
+
+            <div class="destinations">
+
+                <article class="card">
+
+                    <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=800&q=85"
+                        alt="Cappadocia">
+
+                    <div class="card-info">
+
+                        <h2>Cappadocia</h2>
+
+                        <div class="location">
+                            📍 TURKEY
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=85"
+                        alt="Santorini">
+
+                    <div class="card-info">
+
+                        <h2>Santorini</h2>
+
+                        <div class="location">
+                            📍 GREECE
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=85"
+                        alt="Bali">
+
+                    <div class="card-info">
+
+                        <h2>Bali</h2>
+
+                        <div class="location">
+                            📍 INDONESIA
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+
+        <div class="social">
+            <span>f</span>
+            <span>◎</span>
+            <span>●</span>
+        </div>
+
+
+
+
+        <div class="bottom-section">
+
+            <div class="bottom-title">
+                UNIQUE DESTINATIONS
+            </div>
+
+            <div class="counter">
+
+                <span>01</span>
+                <span>/</span>
+                <span>03</span>
+
+                <div class="arrows">
+
+                    <button class="arrow">
+                        ‹
+                    </button>
+
+                    <button class="arrow">
+                        ›
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
