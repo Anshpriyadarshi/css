@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            border: 2px solid gray;
+            height: 60px;
+            width: inherit;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            width: 40%;
+            list-style-type: none;
+            border: 2px solid black;
+
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+
+        .hame {
+            display: none;
+            position: relative;
+
+        }
+
+        .list {
+            border: 2px solid black;
+            position: absolute;
+            height: 40vh;
+            width: 20vw;
+            display: none;
+        }
+
+
+        @media all and (max-width:786px) {
+            nav ul {
+                display: none;
+            }
+
+            button {
+                display: none;
+                background-color: rgb(190, 113, 19);
+            }
+
+            .hame:hover>.list {
+                display: block;
+            }
+
+            .hame {
+                display: block;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            LOGO
+        </div>
+        <ul>
+            <li><a href="">home</a></li>
+            <li><a href="">about</a></li>
+            <li><a href="">contact</a></li>
+        </ul>
+        <div class="button">
+            <button class="login ">login</button>
+            <button class="signup">signup</button>
+        </div>
+        <div class="hame"><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path d="M5 6H12H19M5 12H19M5 18H19" stroke="#000000" stroke-width="2" stroke-linecap="round">
+                    </path>
+                </g>
+            </svg>
+            <ul class="list">
+                <li><a href="">home</a></li>
+                <li><a href="">about</a></li>
+                <li><a href="">contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+
+</html>

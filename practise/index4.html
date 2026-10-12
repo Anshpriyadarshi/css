@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+
+    <style>
+        .child {
+            width: 75px;
+            height: 75px;
+            background-color: red;
+
+            transition: all 2s ease-in;
+
+            animation-name: slide;
+            animation-duration: 5s;
+            animation-delay: 3s;
+            animation-iteration-count: 1000;
+            animation-direction: reverse;
+            animation-fill-mode: backwards;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translate(100px, 0);
+                background-color: rgb(233, 233, 16);
+            }
+
+            25% {
+                transform: translate(100px, 100px);
+                background-color: blue;
+            }
+
+            50% {
+                transform: translate(200px, 100px);
+                background-color: green;
+            }
+
+            75% {
+                transform: translate(200px, 200px);
+                background-color: orange;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                background-color: red;
+            }
+        }
+
+        
+        .child:hover {
+            transform: rotate(45deg);
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="child"></div>
+</body>
+</html>
