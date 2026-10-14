@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .cont {
+            display: flex;
+            width: 90%;
+            height: 600px;
+            border: 1px solid green;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .cont div {
+            width: 16.6667%;
+            height: 150px;
+            border: 1px solid red;
+            font-size: 24px;
+        }
+
+        .one {
+            order: 5;
+            flex-shrink: 1;
+            flex-basis: 150;
+            align-self:flex-end;
+        }
+
+        .two {
+            order: 6;
+            flex-shrink: 2;
+            align-self:flex-start;
+        }
+
+        .three {
+            order: 2;
+        }
+
+        .four {
+            order: 1;
+            flex-shrink: 3;
+        }
+
+        .five {
+            order: 3;
+        }
+
+        .six {
+            order: 4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cont">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div>
+
+</body>
+</html>
