@@ -1,0 +1,68 @@
+/* Background Styles start */
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 30px;
+    background-color: black;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.wrapper {
+    background-color: gold;
+    border: 3px dashed black;
+    padding: 20px;
+}
+
+div {
+    border: 3px solid #333;
+    background-color: #dfdfdf;
+    font-size: 20px;
+}
+
+
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.a1,
+.a2,
+.a3,
+.a4 {
+    flex: 1 1 23%;
+    margin:auto;
+}
+
+.b1,
+.b2 {
+    flex: 1 1 48%;
+    margin:auto;
+}
+
+.c1 {
+    flex: 1 1 100%;
+    margin:auto;
+}
+
+@media (min-width: 400px) {
+    .a1,
+    .a2,
+    .a3,
+    .a4 {
+        flex: 1 1 100%;
+    }
+}
+
+
+@media (min-width: 400){}
