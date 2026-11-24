@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111;
+}
+
+.boards {
+    display: flex;
+    justify-content: center;
+    gap: 34px;
+    padding: 72px 18px 44px;
+}
+
+.boards section {
+    width: 296px;
+}
+
+h1 {
+    margin: 0 0 18px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: normal;
+    letter-spacing: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    width: 11.11%;
+    height: 32px;
+    border: 1px solid #222;
+    text-align: center;
+    font-size: 22px;
+}
+
+td:nth-child(3n) {
+    border-right: 2px solid #222;
+}
+
+tr:nth-child(3n) td {
+    border-bottom: 2px solid #222;
+}
+
+tr:nth-child(-n+3) td:nth-child(n+4):nth-child(-n+6),
+tr:nth-child(n+4):nth-child(-n+6) td:nth-child(-n+3),
+tr:nth-child(n+4):nth-child(-n+6) td:nth-child(n+7),
+tr:nth-child(n+7) td:nth-child(n+4):nth-child(-n+6) {
+    background: #a5d3b6;
+}
+
+@media (max-width: 700px) {
+    .boards {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#08284b, #123d51 43%, #173d18 44%, #142d13);
+}
+
+.scoreboard {
+    width: 100%;
+    min-height: 100vh;
+    padding: 38px 0;
+    text-align: center;
+    background: transparent;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    line-height: .95;
+}
+
+header span {
+    font-size: 42px;
+    filter: grayscale(1) brightness(0) invert(1);
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    gap: 92px;
+    margin-top: 88px;
+}
+
+.scores article {
+    width: 430px;
+    height: 342px;
+    padding: 32px;
+    border-radius: 18px;
+}
+
+.india {
+    background: rgba(20, 105, 225, .85);
+}
+
+.pakistan {
+    background: rgba(57, 176, 41, .88);
+}
+
+h1 {
+    margin: 0 0 40px;
+    font-size: 80px;
+}
+
+.balls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.balls b {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    color: #111;
+    font-size: 28px;
+    line-height: 48px;
+}
+
+h2 {
+    margin: 20px 0 0;
+    font-size: 58px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 76px;
+}
+
+button {
+    width: 92px;
+    height: 92px;
+    border: 3px solid white;
+    border-radius: 18px;
+    background: #f1a81e;
+    color: white;
+    font-size: 42px;
+}
+
+button+button {
+    background: #e32d31;
+}
+
+@media (max-width: 700px) {
+    .scores {
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 40px;
+    }
+
+    .scores article {
+        width: 100%;
+    }
+}

@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #fff;
+}
+
+.board {
+    width: 49vw;
+    height: 49vw;
+    border: 1px solid #f00;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red {
+    grid-area: 1 / 1 / 7 / 7;
+    background: #f00;
+}
+
+.green {
+    grid-area: 1 / 10 / 7 / 16;
+    background: green;
+}
+
+.blue {
+    grid-area: 10 / 1 / 16 / 7;
+    background: blue;
+}
+
+.yellow {
+    grid-area: 10 / 10 / 16 / 16;
+    background: #ff0;
+}
+
+.yard {
+    width: 66.666%;
+    height: 66.666%;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 0;
+}
+
+.yard i {
+    width: 50%;
+    height: 50%;
+    border: 5px solid #f00;
+    border-radius: 50%;
+}
+
+.green .yard i {
+    border-color: green;
+}
+
+.blue .yard i {
+    border-color: blue;
+}
+
+.yellow .yard i {
+    border-color: #ff0;
+}
+
+.track {
+    display: grid;
+}
+
+.track i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111;
+    font-size: 34px;
+    font-style: normal;
+    color: #000;
+}
+
+.top-track {
+    grid-area: 1 / 7 / 7 / 10;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.left-track {
+    grid-area: 7 / 1 / 10 / 7;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.right-track {
+    grid-area: 7 / 10 / 10 / 16;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.bottom-track {
+    grid-area: 10 / 7 / 16 / 10;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.track .green-cell {
+    background: green;
+}
+
+.track .red-cell {
+    background: #f00;
+}
+
+.track .blue-cell {
+    background: blue;
+}
+
+.track .yellow-cell {
+    background: #ff0;
+}
+
+.center {
+    grid-area: 7 / 7 / 10 / 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.center i:nth-child(1) {
+    background: linear-gradient(135deg, green 50%, #f00 50%);
+}
+
+.center i:nth-child(2) {
+    background: linear-gradient(135deg, green 50%, #ff0 50%);
+}
+
+.center i:nth-child(3) {
+    background: linear-gradient(45deg, blue 50%, #f00 50%);
+}
+
+.center i:nth-child(4) {
+    background: linear-gradient(135deg, #ff0 50%, blue 50%);
+}
+
+@media (max-width: 700px) {
+    .board {
+        width: 94vw;
+        height: 94vw;
+    }
+}
