@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            filter: opacity(60%);
+            transition: filter 0.3s;
+        }
+
+        img:hover {
+            filter: opacity(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Light Blur</h1>
+    <img src="book2.png" style="filter: blur(2px);">
+    <h1>Heavy Blur</h1>
+    <img src="book2.png" style="filter: blur(10px);">
+    <h1>Soft Shadow</h1>
+    <img src="book1.png" style="filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));">
+    <h1> Colored Shadow</h1>
+    <img src="book1.png" style="filter: drop-shadow(3px 3px 5px rgb(0, 0, 0));">
+    <h1>Partial Grayscale</h1>
+    <img src="book2.png" style="filter: grayscale(50%);">
+    <h1>90-Degree Hue Rotation</h1>
+    <img src="book1.png" style="filter: hue-rotate(180deg);">
+    <h1>Full Inversion</h1>
+    <img src="book2.png" style="filter: invert(100%);">
+    <h1>Hover Effect with Opacity</h1>
+    <img src="book1.png">
+    <h1>High Saturation</h1>
+    <img src="book2.png" style="filter: saturate(200%);">
+    <h1>Full Sepia</h1>
+    <img src="book1.png" style="filter: sepia(100%);">
+</body>
+
+</html>
